@@ -1,0 +1,17 @@
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Main from './pages/Main';
+import Repository from './pages/Repository';
+
+const Routes = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/Repository" component={Repository} />
+      </Switch>
+    </Router>
+  );
+};
+
+export default Routes;
