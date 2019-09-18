@@ -13,6 +13,6 @@ export const Footer = styled.h2`
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   span {
-    color: #2716c4;
+    color: #817f;
   }
 `;
