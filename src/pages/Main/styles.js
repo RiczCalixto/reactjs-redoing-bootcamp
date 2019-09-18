@@ -1,18 +1,49 @@
 import styled from 'styled-components';
 
-export const Title = styled.h1`
-  font-size: 24px;
-  color: ${props => (props.error ? 'red' : 'green')};
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+export const Container = styled.div`
+  max-width: 700px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin: 80px auto;
+
+  h1 {
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
 `;
 
-export const Footer = styled.h2`
-  font-size: 24px;
-  color: #2494c2;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  span {
-    color: #817f;
+export const Form = styled.form`
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+
+  input {
+    flex: 1;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px 15px;
   }
+`;
+
+export const SubmitButton = styled.button.attrs({
+  type: 'submit',
+})`
+  background: #353535;
+  border: 0;
+  padding: 0 15px;
+  margin-left: 10px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
