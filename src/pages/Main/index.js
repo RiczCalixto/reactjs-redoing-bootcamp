@@ -6,6 +6,7 @@ import api from '../../services/api';
 class Main extends Component {
   state = {
     newRepo: '',
+    repositories: [],
   };
 
   handleInputChange = e => {
@@ -14,10 +15,14 @@ class Main extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-    console.log(this.state.newRepo);
-    const { newRepo } = this.state;
+    const { newRepo, repositories } = this.state;
     const response = await api.get(`${newRepo}`);
-    console.log(response.data);
+    const data = {
+      name: response.data.full_name,
+      description: response.data.description,
+    };
+
+    this.setState({ repositories: [...repositories, data], newRepo: '' });
   };
 
   render() {
