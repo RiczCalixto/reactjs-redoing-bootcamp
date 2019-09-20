@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Form, SubmitButton } from './styles';
-import { FaGithubAlt, FaPlus } from 'react-icons/fa';
+import { FaGithubAlt, FaPlus, FaSpinner } from 'react-icons/fa';
 import api from '../../services/api';
 
 class Main extends Component {
@@ -49,7 +49,7 @@ class Main extends Component {
           />
 
           <SubmitButton loading={loading}>
-            <FaPlus color="#FFF" />
+            {loading ? <FaSpinner color="#FFF" /> : <FaPlus color="#FFF" />}
           </SubmitButton>
         </Form>
       </Container>
