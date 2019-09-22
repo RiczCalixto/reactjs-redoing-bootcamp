@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Container, Form, SubmitButton, IconPlus, IconSpinner } from './styles';
+import {
+  Container,
+  Form,
+  SubmitButton,
+  IconPlus,
+  IconSpinner,
+  List,
+} from './styles';
 import { FaGithubAlt } from 'react-icons/fa';
 import api from '../../services/api';
 
@@ -32,7 +39,7 @@ class Main extends Component {
   };
 
   render() {
-    const { newRepo, loading } = this.state;
+    const { newRepo, loading, repositories } = this.state;
     return (
       <Container>
         <h1>
@@ -52,6 +59,14 @@ class Main extends Component {
             {loading ? <IconSpinner /> : <IconPlus />}
           </SubmitButton>
         </Form>
+        <List>
+          {repositories.map(data => (
+            <li key={data.name}>
+              <span>{data.name}</span>
+              <a href="">Detalhes do Repositório</a>
+            </li>
+          ))}
+        </List>
       </Container>
     );
   }
