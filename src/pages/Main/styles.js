@@ -1,4 +1,13 @@
 import styled, { keyframes, css } from 'styled-components';
+import { FaPlus, FaSpinner } from 'react-icons/fa';
+
+export const IconSpinner = styled(FaSpinner)`
+  color: #fff;
+`;
+
+export const IconPlus = styled(FaPlus)`
+  color: #fff;
+`;
 
 export const Container = styled.div`
   max-width: 700px;
