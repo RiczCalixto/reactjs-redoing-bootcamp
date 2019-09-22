@@ -8,6 +8,7 @@ import {
   List,
 } from './styles';
 import { FaGithubAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 class Main extends Component {
@@ -77,10 +78,15 @@ class Main extends Component {
         </Form>
         <List>
           {repositories.map(data => (
-            <li key={data.name}>
-              <span>{data.name}</span>
-              <a href="">Detalhes</a>
-            </li>
+            <div key={data.name}>
+              <li>
+                <span>{data.name}</span>
+                <Link to={`/repository/${encodeURIComponent(data.name)}`}>
+                  Detalhes
+                </Link>
+              </li>
+              <li>{data.description}</li>
+            </div>
           ))}
         </List>
       </Container>
