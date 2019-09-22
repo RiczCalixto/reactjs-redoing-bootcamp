@@ -17,6 +17,22 @@ class Main extends Component {
     loading: false,
   };
 
+  componentDidMount() {
+    const repositories = localStorage.getItem('repositories');
+    if (repositories) {
+      this.setState({ repositories: JSON.parse(repositories) });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.repositories !== this.state.repositories) {
+      localStorage.setItem(
+        'repositories',
+        JSON.stringify(this.state.repositories)
+      );
+    }
+  }
+
   handleInputChange = e => {
     this.setState({ newRepo: e.target.value });
   };
@@ -63,7 +79,7 @@ class Main extends Component {
           {repositories.map(data => (
             <li key={data.name}>
               <span>{data.name}</span>
-              <a href="">Detalhes do Repositório</a>
+              <a href="">Detalhes</a>
             </li>
           ))}
         </List>
