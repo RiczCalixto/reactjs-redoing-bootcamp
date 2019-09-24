@@ -40,6 +40,9 @@ class Repository extends Component {
 
   render() {
     const { repository, issues, loading } = this.state;
+    console.log(repository);
+    console.log(issues);
+    console.log(loading);
     return <h1>Repository:</h1>;
   }
 }
