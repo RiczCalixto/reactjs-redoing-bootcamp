@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Form,
-  SubmitButton,
-  IconPlus,
-  IconSpinner,
-  List,
-} from './styles';
+import { Form, SubmitButton, IconPlus, List } from './styles';
+import { Container, IconSpinner } from '../Commons/styles';
 import { FaGithubAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';

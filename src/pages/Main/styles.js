@@ -1,9 +1,6 @@
-import styled, { keyframes, css } from 'styled-components';
-import { FaPlus, FaSpinner } from 'react-icons/fa';
-
-export const IconSpinner = styled(FaSpinner)`
-  color: #fff;
-`;
+import styled, { css } from 'styled-components';
+import { FaPlus } from 'react-icons/fa';
+import { rotate } from '../Commons/styles';
 
 export const IconPlus = styled(FaPlus)`
   color: #fff;
@@ -29,26 +26,6 @@ export const List = styled.ul`
   }
 `;
 
-export const Container = styled.div`
-  max-width: 700px;
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  margin: 80px auto;
-
-  h1 {
-    font-size: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    svg {
-      margin-right: 10px;
-    }
-  }
-`;
-
 export const Form = styled.form`
   margin-top: 30px;
   display: flex;
@@ -60,16 +37,6 @@ export const Form = styled.form`
     border-radius: 4px;
     font-size: 16px;
     padding: 10px 15px;
-  }
-`;
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
   }
 `;
 
