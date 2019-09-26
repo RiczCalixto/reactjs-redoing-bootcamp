@@ -38,7 +38,7 @@ export const Owner = styled.header`
   p {
     margin-top: 5px;
     font-size: 14px;
-    color: #666;
+    color: #3e3e3e;
     text-align: center;
     max-width: 400px;
   }
