@@ -49,3 +49,50 @@ export const Owner = styled.header`
     text-decoration: none;
   }
 `;
+
+export const IssuesList = styled.ul`
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 1px solid #333e;
+  list-style: none;
+
+  li {
+    display: flex;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 15px 10px;
+
+    & + li {
+      margin-top: 20px;
+    }
+
+    img {
+      border-radius: 50%;
+      max-width: 50px;
+      max-height: 50px;
+      border: 2px solid #eee;
+    }
+
+    div {
+      flex: 1;
+      margin-left: 15px;
+      strong {
+        font-size: 16px;
+        a {
+          text-decoration: none;
+          color: #333;
+
+          &:hover {
+            color: #8799;
+          }
+        }
+      }
+
+      p {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+`;
