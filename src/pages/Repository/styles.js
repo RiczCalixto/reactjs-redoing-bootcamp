@@ -86,6 +86,17 @@ export const IssuesList = styled.ul`
             color: #8799;
           }
         }
+
+        span {
+          background: #eee;
+          color: #333;
+          border-radius: 2px;
+          font-size: 12px;
+          height: 20px;
+          font-weight: 600;
+          padding: 6px 8px;
+          margin-left: 10px;
+        }
       }
 
       p {
