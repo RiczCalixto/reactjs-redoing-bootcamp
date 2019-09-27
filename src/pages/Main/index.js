@@ -10,6 +10,7 @@ class Main extends Component {
     newRepo: '',
     repositories: [],
     loading: false,
+    error: null,
   };
 
   componentDidMount() {
@@ -29,28 +30,38 @@ class Main extends Component {
   }
 
   handleInputChange = e => {
-    this.setState({ newRepo: e.target.value });
+    this.setState({ newRepo: e.target.value, error: null });
   };
 
   handleSubmit = async e => {
     e.preventDefault();
-    const { newRepo, repositories } = this.state;
-    this.setState({ loading: true });
-    const response = await api.get(`${newRepo}`);
-    const data = {
-      name: response.data.full_name,
-      description: response.data.description,
-    };
+    this.setState({ loading: true, error: false });
+    try {
+      const { newRepo, repositories } = this.state;
+      if (newRepo === '')
+        throw console.log('Você precisa indicar um repositório');
+      const hasRepo = repositories.find(repo => repo.name === newRepo);
+      if (hasRepo) throw console.log('Repositório dpuplicado');
+      const response = await api.get(`${newRepo}`);
+      const data = {
+        name: response.data.full_name,
+        description: response.data.description,
+      };
 
-    this.setState({
-      repositories: [...repositories, data],
-      newRepo: '',
-      loading: false,
-    });
+      this.setState({
+        repositories: [...repositories, data],
+        newRepo: '',
+        loading: false,
+      });
+    } catch (error) {
+      this.setState({ error: true });
+    } finally {
+      this.setState({ loading: false });
+    }
   };
 
   render() {
-    const { newRepo, loading, repositories } = this.state;
+    const { newRepo, loading, repositories, error } = this.state;
     return (
       <Container>
         <h1>
@@ -58,14 +69,13 @@ class Main extends Component {
           Repositórios
         </h1>
 
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit} error={error}>
           <input
             type="text"
-            placeholder="Adicionar repositório!"
+            placeholder="Adicionar repositório! Ex: facebook/react"
             value={newRepo}
             onChange={this.handleInputChange}
           />
-
           <SubmitButton loading={loading}>
             {loading ? <IconSpinner /> : <IconPlus />}
           </SubmitButton>
