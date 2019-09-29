@@ -84,7 +84,7 @@ class Main extends Component {
           {repositories.map(data => (
             <div key={data.name}>
               <li>
-                <span>{data.name}</span>
+                <span>->{data.name.toUpperCase()}</span>
                 <Link to={`/repository/${encodeURIComponent(data.name)}`}>
                   Detalhes
                 </Link>

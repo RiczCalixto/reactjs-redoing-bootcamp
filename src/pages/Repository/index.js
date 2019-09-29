@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import { Container, IconSpinner } from '../Commons/styles';
-import { Loading, Owner, IssuesList } from './styles';
+import { Loading, Owner, IssuesList, IssuesFilter } from './styles';
 
 class Repository extends Component {
   static propTypes = {
@@ -103,7 +103,7 @@ class Repository extends Component {
           <p>{repository.description}</p>
         </Owner>
         <IssuesList>
-          <div active={filterIndex}>
+          <IssuesFilter active={filterIndex}>
             {filters.map((filter, index) => (
               <button
                 type="button"
@@ -113,7 +113,7 @@ class Repository extends Component {
                 {filter.label}
               </button>
             ))}
-          </div>
+          </IssuesFilter>
           {issues.map(issue => (
             <li key={String(issue.id)}>
               <img src={issue.user.avatar_url} alt={issue.user.login} />
