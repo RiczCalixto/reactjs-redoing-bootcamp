@@ -1,3 +1,4 @@
+import React from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { FaSpinner } from 'react-icons/fa';
 
@@ -38,4 +39,18 @@ export const Container = styled.div`
       margin-right: 10px;
     }
   }
+`;
+
+const CustomFooter = ({ className, children }) => (
+  <footer className={className}>
+    {children}
+    <span>Created by: Ricardo Calixto</span>
+  </footer>
+);
+
+export const Footer = styled(CustomFooter)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
 `;

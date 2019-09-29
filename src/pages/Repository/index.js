@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
-import { Container, IconSpinner } from '../Commons/styles';
+import { Container, IconSpinner, Footer } from '../Commons/styles';
 import {
   Loading,
   Owner,
@@ -152,6 +152,7 @@ class Repository extends Component {
             Próximo
           </button>
         </PageActions>
+        <Footer />
       </Container>
     );
   }

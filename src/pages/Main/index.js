@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, SubmitButton, IconPlus, List } from './styles';
-import { Container, IconSpinner } from '../Commons/styles';
+import { Container, IconSpinner, Footer } from '../Commons/styles';
 import { FaGithubAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
@@ -93,6 +93,7 @@ class Main extends Component {
             </div>
           ))}
         </List>
+        <Footer />
       </Container>
     );
   }
