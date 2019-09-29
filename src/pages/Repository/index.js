@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import { Container, IconSpinner } from '../Commons/styles';
-import { Loading, Owner, IssuesList, IssuesFilter } from './styles';
+import {
+  Loading,
+  Owner,
+  IssuesList,
+  IssuesFilter,
+  PageActions,
+} from './styles';
 
 class Repository extends Component {
   static propTypes = {
@@ -129,6 +135,23 @@ class Repository extends Component {
             </li>
           ))}
         </IssuesList>
+        <PageActions>
+          <button
+            type="button"
+            disabled={page < 2}
+            onClick={() => this.handlePage('back')}
+          >
+            Anterior
+          </button>
+          <span>Página {page}</span>
+          <button
+            type="button"
+            disabled={issues.length !== 4 ? true : false}
+            onClick={() => this.handlePage('next')}
+          >
+            Próximo
+          </button>
+        </PageActions>
       </Container>
     );
   }
