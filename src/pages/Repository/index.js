@@ -146,7 +146,7 @@ class Repository extends Component {
           <span>Página {page}</span>
           <button
             type="button"
-            disabled={issues.length !== 4 ? true : false}
+            disabled={issues.length < 4 ? true : false}
             onClick={() => this.handlePage('next')}
           >
             Próximo
