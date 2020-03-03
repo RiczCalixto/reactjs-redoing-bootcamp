@@ -86,7 +86,7 @@ class Main extends Component {
               <li>
                 <span>{data.name.toUpperCase()}</span>
                 <Link to={`/repository/${encodeURIComponent(data.name)}`}>
-                  Detalhes
+                  Detalhes oi oi
                 </Link>
               </li>
               <li>{data.description}</li>
