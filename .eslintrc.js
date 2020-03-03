@@ -23,4 +23,4 @@ module.exports = {
     'import/prefer-default-export': 'off',
   },
 };
-7ed42453beecd1e3c65a2f67a272cafa0a82fb3e
+
